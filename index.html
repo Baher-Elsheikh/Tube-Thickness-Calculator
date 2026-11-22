@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Heat Exchanger Tube Minimum Thickness Calculator | ASME VIII-1 UG-27, UG-28, TEMA U-bend</title>
+<link rel="icon" type="image/png" href="https://baher-elsheikh.github.io/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://baher-elsheikh.github.io/assets/apple-touch-icon.png">
 <meta name="description" content="Free online calculator for heat exchanger tube minimum required thickness: internal pressure (ASME VIII-1 UG-27 / Appendix 1-1), external pressure (UG-28), U-bend thinning (TEMA RCB-2.31) and tube-side hydrotest (UG-99). Step-by-step equations, PASS/FAIL and PDF output.">
 <meta name="keywords" content="heat exchanger tube thickness calculator, tube minimum thickness, ASME Section VIII Division 1, UG-27, UG-28, Appendix 1-1, UG-99 hydrotest, TEMA RCB-2.31, U-bend thinning, shell and tube heat exchanger, BWG tube wall">
 <meta name="author" content="Baher Elsheikh">
@@ -65,6 +67,13 @@ h1{font-family:var(--math);font-weight:600;font-size:clamp(26px,3.4vw,38px);line
 .byline .links{display:inline-flex;gap:12px}
 .byline a,footer a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:500}
 .byline a:hover,footer a:hover{text-decoration-thickness:2px}
+.home{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;margin-bottom:14px}
+.home img{height:40px;width:auto}
+.home:hover span{color:var(--accent)}
+.lg-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lg-light{display:none}:root:not([data-theme="light"]) .lg-dark{display:inline}}
+:root[data-theme="dark"] .lg-light{display:none}
+:root[data-theme="dark"] .lg-dark{display:inline}
 @media print{.byline a::after{content:" (" attr(href) ")";font-weight:400;color:var(--steel)}}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
 button{font:500 14px var(--sans);border-radius:6px;padding:8px 14px;cursor:pointer;border:1px solid var(--rule);background:var(--panel);color:var(--ink)}
@@ -157,6 +166,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
 <div class="wrap">
   <header class="top">
     <div>
+      <a class="home" href="https://baher-elsheikh.github.io/calculators/"><img class="lg-light" src="https://baher-elsheikh.github.io/assets/gear-light.png" alt=""><img class="lg-dark" src="https://baher-elsheikh.github.io/assets/gear-dark.png" alt=""><span>Baher Elsheikh</span><span style="font-weight:400;color:var(--steel)">| All calculators</span></a>
       <h1>Heat exchanger tube minimum thickness</h1>
       <div class="byline">Prepared by: <strong>Baher Elsheikh</strong>
         <span class="links"><a href="https://www.linkedin.com/in/baher-elsheikh/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.youtube.com/@baherelsheikh4942" target="_blank" rel="noopener noreferrer">YouTube channel</a></span></div>
@@ -204,6 +214,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
         <div class="f"><label for="Dc">Channel ID <i>D</i><sub>c</sub></label><input id="Dc" type="number" step="any"><span class="u">mm</span></div>
         <label class="check"><input id="Lfull" type="checkbox" checked> Unsupported length = full tube length (conservative)</label>
         <div class="f"><label for="L">Unsupported length <i>L</i></label><input id="L" type="number" step="any"><span class="u">mm</span></div>
+        <p class="hint">UG-28(b): <i>L</i> is the total length of the tube between tubesheets. Baffles and support plates are not lines of support for pressure collapse (the tubes pass loosely through them). U-tubes: use the straight leg, tubesheet face to bend tangent; the bend itself stiffens the tube. Once <i>L</i>/<i>D</i><sub>o</sub> &gt; 50 the result does not change.</p>
         <div class="f wide"><label for="orient">Exchanger orientation</label>
           <select id="orient"><option value="H">Horizontal</option><option value="V">Vertical</option></select></div>
       </fieldset>
@@ -243,6 +254,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
         <legend>U-bend (TEMA RCB-2.31)</legend>
         <label class="check"><input id="isU" type="checkbox" checked> U-tube bundle</label>
         <div class="f"><label for="Rb">Inner-row bend radius <i>R</i><sub>b</sub></label><input id="Rb" type="number" step="any"><span class="u">mm</span></div>
+        <p class="hint">Enter the smallest mean bend radius (first, innermost row): thinning, and so the required wall before bending, is largest there. Outer rows with larger radii need less.</p>
         <div class="f wide"><label for="ctype">Material type</label>
           <select id="ctype"></select></div>
       </fieldset>
@@ -259,7 +271,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
   </div>
 
   <footer>
-    <div>Prepared by: Baher Elsheikh (<a href="https://www.linkedin.com/in/baher-elsheikh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://www.youtube.com/@baherelsheikh4942" target="_blank" rel="noopener noreferrer">YouTube</a>). Version 1.0, November 2026 (from the spreadsheet of 30 Nov 2019).</div>
+    <div>Prepared by: Baher Elsheikh (<a href="https://www.linkedin.com/in/baher-elsheikh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://www.youtube.com/@baherelsheikh4942" target="_blank" rel="noopener noreferrer">YouTube</a>). Version 1.1, November 2026 (from the spreadsheet of 30 Nov 2019).</div>
     <div>© 2026 Baher Elsheikh. Free to use; not to be copied, modified or redistributed without permission.</div>
     <div>This tool is an aid for engineering screening. Allowable stresses, yield strengths and the external-pressure factors <i>A</i> and <i>B</i> are entered by the user from ASME Section II Part D and are not supplied here. Results must be verified by a qualified engineer against the applicable code edition before use. No warranty is given.</div>
   </footer>
@@ -396,6 +408,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
     const s3notes = [];
     if(!thin && A>0.1) s3notes.push('For D<sub>o</sub>/t<sub>c</sub> < 10, use A = 0.10 where the chart value exceeds 0.10.');
     if(Dt<4) s3notes.push('For D<sub>o</sub>/t<sub>c</sub> < 4, A = 1.1/(D<sub>o</sub>/t<sub>c</sub>)² is shown as the reference value.');
+    s3notes.push(`L/D<sub>o</sub> = ${f(L/Do,1)}${L/Do>50?': above 50, so the chart value at 50 applies and the length chosen does not change the result':''}. L per UG-28(b): total tube length between tubesheets; baffles are not lines of support.`);
     out += step(3,'External pressure','UG-28(c), tube loaded by shell side pressure; corroded wall',s3rows,s3res,s3notes);
 
     out += step(4,'U-bend thinning','TEMA RCB-2.31; required wall before bending',[
@@ -407,7 +420,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
       !isU ? ['info','Not a U-tube bundle: straight tube governs.']
       : okU ? ['ok',`t<sub>m</sub> ${f(tm,3)} ≥ t<sub>0</sub> ${f(t0,3)} mm: U-bend acceptable.`]
             : ['bad',`t<sub>m</sub> ${f(tm,3)} < t<sub>0</sub> ${f(t0,3)} mm: increase the nominal wall t<sub>n</sub>.`]
-    ]);
+    ], isU ? ['Checked at the innermost row (smallest R<sub>b</sub>), which governs. Outer rows can be ordered at a thinner wall if the bundle is split by rows.'] : []);
 
     out += step(5,'Hydrostatic test, tube side','UG-99(b); hoop stress at uncorroded minimum wall',[
       row('Test pressure', `${v('P')}<sub>T</sub> = 1.3${v('P')}<sub>t</sub>(${v('S')}<sub>h</sub>/${v('S')}<sub>t</sub>)`, `1.3 × ${f(Pt,3)} × (${f(Sh,1)} / ${f(St,1)})`, PT,'MPa',3, back(PT)),
