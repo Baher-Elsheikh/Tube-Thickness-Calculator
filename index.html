@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Heat Exchanger Tube Minimum Thickness Calculator | ASME VIII-1 UG-27, UG-28, TEMA U-bend</title>
-<link rel="icon" type="image/png" href="https://baher-elsheikh.github.io/assets/favicon.png">
+<link rel="icon" type="image/png" href="https://baher-elsheikh.github.io/assets/favicon.png?v=2">
+<link rel="shortcut icon" href="https://baher-elsheikh.github.io/favicon.ico?v=2">
 <link rel="apple-touch-icon" href="https://baher-elsheikh.github.io/assets/apple-touch-icon.png">
 <meta name="description" content="Free online calculator for heat exchanger tube minimum required thickness: internal pressure (ASME VIII-1 UG-27 / Appendix 1-1), external pressure (UG-28), U-bend thinning (TEMA RCB-2.31) and tube-side hydrotest (UG-99). Step-by-step equations, PASS/FAIL and PDF output.">
 <meta name="keywords" content="heat exchanger tube thickness calculator, tube minimum thickness, ASME Section VIII Division 1, UG-27, UG-28, Appendix 1-1, UG-99 hydrotest, TEMA RCB-2.31, U-bend thinning, shell and tube heat exchanger, BWG tube wall">
@@ -69,6 +70,12 @@ h1{font-family:var(--math);font-weight:600;font-size:clamp(26px,3.4vw,38px);line
 .byline a:hover,footer a:hover{text-decoration-thickness:2px}
 .home{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;margin-bottom:14px}
 .home img{height:40px;width:auto}
+.topnav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-bottom:14px}
+.topnav .home{margin-bottom:0}
+.navlinks{display:inline-flex;gap:14px;font-size:14.5px}
+.navlinks a{color:var(--accent);text-decoration:none;font-weight:500}
+.navlinks a:hover{text-decoration:underline}
+@media print{.topnav{display:none}}
 .home:hover span{color:var(--accent)}
 .lg-dark{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lg-light{display:none}:root:not([data-theme="light"]) .lg-dark{display:inline}}
@@ -166,7 +173,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--steel);border-top:1px solid 
 <div class="wrap">
   <header class="top">
     <div>
-      <a class="home" href="https://baher-elsheikh.github.io/calculators/"><img class="lg-light" src="https://baher-elsheikh.github.io/assets/gear-light.png" alt=""><img class="lg-dark" src="https://baher-elsheikh.github.io/assets/gear-dark.png" alt=""><span>Baher Elsheikh</span><span style="font-weight:400;color:var(--steel)">| All calculators</span></a>
+      <nav class="topnav" aria-label="Site"><a class="home" href="https://baher-elsheikh.github.io/"><img class="lg-light" src="https://baher-elsheikh.github.io/assets/gear-light.png" alt=""><img class="lg-dark" src="https://baher-elsheikh.github.io/assets/gear-dark.png" alt=""><span>Baher Elsheikh</span></a><span class="navlinks"><a href="https://baher-elsheikh.github.io/">Home</a><a href="https://baher-elsheikh.github.io/calculators/">All calculators</a></span></nav>
       <h1>Heat exchanger tube minimum thickness</h1>
       <div class="byline">Prepared by: <strong>Baher Elsheikh</strong>
         <span class="links"><a href="https://www.linkedin.com/in/baher-elsheikh/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.youtube.com/@baherelsheikh4942" target="_blank" rel="noopener noreferrer">YouTube channel</a></span></div>
